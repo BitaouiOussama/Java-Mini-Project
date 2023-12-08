@@ -5,11 +5,17 @@ package packg.voiture;
 
 /**
  * Class Voiture
+ * L'interface Comparable ajoute une prise en charge du tri des listes contenant des types non primitifs, 
+ * c.-à-d. des listes de types définis par l'utilisateur.
  */
-public class Voiture {
+public class Voiture implements Comparable<Voiture>{
 
 	// Instance variables
 	
+	/**
+	 * Id of the car
+	 */
+	private int id;
 	/**
 	 * Brand of the car
 	 */
@@ -43,7 +49,7 @@ public class Voiture {
     public Voiture() {}
     
     /**
-     * The constructor initialize these attributes
+     * Le constructeur initialise les attributs
      * @param brand
      * @param model
      * @param year
@@ -59,6 +65,13 @@ public class Voiture {
     }
     
     // Getter methods
+    /**
+     * Get Id
+     * @return Id of Car (Voiture)
+     */
+    public int getId() {
+    	return this.id;
+    }
     /**
      * Get Brand
      * @return brand of Car (Voiture)
@@ -96,6 +109,14 @@ public class Voiture {
     }
     
     // Setter methods
+    
+    /**
+     * Set Id
+     * @param Id of Car (Voiture)
+     */
+    public void setId(int id) {
+    	this.id = id;
+    }
     
     /**
      * Set Brand
@@ -138,6 +159,16 @@ public class Voiture {
     }
     
     /**
+     * Method toString returns information about car (Voiture) in string format
+     */
+    @Override
+    public String toString() {
+    	// TODO Auto-generated method stub
+    	return this.getClass().getSimpleName() + "[Brand " + this.brand + " Model " + this.model + " Year " + this.year 
+    			+ " Color " + this.color + " Price " + this.price + "]";
+    } 
+    
+    /**
      * Method equals compares two Voiture Object, 
      * and returns true if the Object are equal, and false if not
      */
@@ -148,14 +179,22 @@ public class Voiture {
     	return this.equals(voiture);
     }
     
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+    	// TODO Auto-generated method stub
+    	return (Voiture) this.clone();
+    }
+    
     /**
-     * Method toString returns information about car (Voiture) in string format
+     * Une Methods qui renvoie un nombre entier qui représente le résultat de la comparaison
      */
     @Override
-    public String toString() {
-    	// TODO Auto-generated method stub
-    	return this.getClass().getSimpleName() + "[Brand " + this.brand + " Model " + this.model + " Year " + this.year 
-    			+ " Color " + this.color + " Price " + this.price + "]";
-    } 
+	public int compareTo(Voiture o) {
+		// TODO Auto-generated method stub
+		if(this.getId()==o.getId()) return 0;
+		else return 1;
+	}
+    
+    
 
 }
