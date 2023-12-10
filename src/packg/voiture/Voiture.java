@@ -8,7 +8,7 @@ package packg.voiture;
  * L'interface Comparable ajoute une prise en charge du tri des listes contenant des types non primitifs, 
  * c.-à-d. des listes de types définis par l'utilisateur.
  */
-public class Voiture implements Comparable<Voiture>{
+public class Voiture implements Comparable<Voiture>,Cloneable{
 
 	// Instance variables
 	
@@ -194,6 +194,13 @@ public class Voiture implements Comparable<Voiture>{
 		if(this.getId()==o.getId()) return 0;
 		else return 1;
 	}
+    
+    public static void main(String[]args) {
+    	
+    
+    	
+    	
+    }
     
     
 
