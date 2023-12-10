@@ -1,6 +1,7 @@
 /**
  * @author Anass Amazzar - Oussama Bitaoui
  */
+
 package packg.voiture;
 
 /**
@@ -28,8 +29,8 @@ public class Velectrique extends Voiture{
 	 * @param autonomieEnkm
 	 * @param tempsDechargeEnHeures
 	 */
-	public Velectrique(String brand, String model, int year, String color, double price, int autonomieEnkm, int tempsDechargeEnHeures){
-		super(brand, model, year, color, price); // appele du constructeur de la class parent Voiture
+	public Velectrique(int id, String brand, String model, int year, String color, double price, int autonomieEnkm, int tempsDechargeEnHeures){
+		super(id,brand, model, year, color, price); // appele du constructeur de la class parent Voiture
 		this.autonomieEnkm = autonomieEnkm;
 		this.tempsDechargeEnHeures = tempsDechargeEnHeures;
 	}

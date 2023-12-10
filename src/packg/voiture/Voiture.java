@@ -56,7 +56,8 @@ public class Voiture implements Comparable<Voiture>,Cloneable{
      * @param color
      * @param price
      */
-    public Voiture(String brand, String model, int year, String color, double price) {
+    public Voiture(int id, String brand, String model, int year, String color, double price) {
+    	this.id=id;
     	this.brand=brand;
     	this.model=model;
     	this.year=year;
@@ -164,7 +165,7 @@ public class Voiture implements Comparable<Voiture>,Cloneable{
     @Override
     public String toString() {
     	// TODO Auto-generated method stub
-    	return this.getClass().getSimpleName() + "[Brand " + this.brand + " Model " + this.model + " Year " + this.year 
+    	return this.getClass().getSimpleName() + "[id "+ this.id +"Brand " + this.brand + " Model " + this.model + " Year " + this.year 
     			+ " Color " + this.color + " Price " + this.price + "]";
     } 
     
@@ -194,14 +195,5 @@ public class Voiture implements Comparable<Voiture>,Cloneable{
 		if(this.getId()==o.getId()) return 0;
 		else return 1;
 	}
-    
-    public static void main(String[]args) {
-    	
-    
-    	
-    	
-    }
-    
-    
-
+        
 }
